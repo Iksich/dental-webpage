@@ -1,0 +1,79 @@
+/* components.css */
+.header {
+  background-color: #3498db;
+  color: white;
+}
+
+.header a {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.hero {
+  background-color: #f0f5ff;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  color: #3498db;
+}
+
+.hero p {
+  font-size: 1.125rem;
+  color: #777;
+}
+
+.hero a {
+  background-color: #3498db;
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 50px;
+  display: inline-block;
+  margin-top: 20px;
+  text-decoration: none;
+}
+
+.hero a:hover {
+  background-color: #217dbb;
+}
+
+.material-list {
+  background-color: #3498db;
+}
+
+.material-list h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #3498db;
+}
+
+.material-list ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.material-list li {
+  border: 1px solid #aad5ff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.material-list li .name {
+  font-weight: bold;
+  color: #3498db;
+}
+
+.material-list li .price {
+  margin-top: 10px;
+  color: #555;
+}
+
+.footer {
+  background-color: #3498db;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+}
