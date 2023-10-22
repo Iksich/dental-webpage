@@ -1,8 +1,18 @@
-import { createStore, combineReducers } from 'redux';
-import myReducer from './myReducer';
+import '../styles/globals.css'; // Import global styles
+import App from '../components/App'; // Import your main App component
+import { useEffect } from 'react';
 
-const rootReducer = combineReducers({
-  myReducer, // Add more reducers if needed
-});
+function MyApp({ Component, pageProps }) {
+  useEffect(() => {
+    // If you want to measure performance, you can do so here
+    // For example: reportWebVitals(console.log)
+  }, []);
 
-const store = createStore(rootReducer);
+  return (
+    <App>
+      <Component {...pageProps} />
+    </App>
+  );
+}
+
+export default MyApp;

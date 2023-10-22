@@ -1,0 +1,26 @@
+/* styles/tailwind.css */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+
+/* Define your custom styles for components */
+.my-custom-header {
+  background-color: #3498db;
+}
+
+.my-custom-hero {
+  background-image: url('https://source.unsplash.com/featured/1280x720/?implants');
+}
+
+/* Style the navigation links */
+.my-custom-nav-link {
+  color: #777;
+  margin-right: 1rem;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.my-custom-nav-link:hover {
+  color: #3498db;
+}
+
+/* More custom styles for other components */

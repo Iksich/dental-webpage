@@ -1,24 +1,33 @@
 module.exports = {
-  purge: [],
-  darkMode: false,
-  theme: {
-    extend: {
-      colors: {
-        blue: {
-          100: '#f0f5ff',
-          500: '#3498db',
+    purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
+    darkMode: false, // or 'media' or 'class'
+    theme: {
+        screens: {
+            sm: '576px',
+            md: '768px',
+            lg: '992px',
+            xl: '1200px',
         },
-        white: '#ffffff',
-        gray: {
-          600: '#777',
-          200: '#aad5ff',
+        container: {
+            center: true,
+            padding: '1rem'
         },
-      },
+        extend: {
+            fontFamily: {
+                Poppins: "'poppins', sans-serif",
+                Roboto: "'roboto' sans-serif",
+            },
+            colors: {
+                'primary': '#676cb8',
+                'secondary': '#3695cc'
+            }
+        },
     },
-  },
-  variants: {
-    extend: {},
-  },
-  plugins: [],
+    variants: {
+        extend: {
+            display: ['group-hover'],
+            visibility: ['group-hover'],
+        },
+    },
+    plugins: [],
 }
-

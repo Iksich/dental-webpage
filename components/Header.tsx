@@ -1,24 +1,50 @@
-import React from 'react';
-import Image from 'next/image';
+import React from "react";
+import { Link } from "react-router-dom";
+import { useAuth } from "./../Context/AuthContext";
 
-const Header: React.FC = () => {
+const Header = () => {
+  const { currentUser, logout } = useAuth();
   return (
-    <header className="bg-blue-200 py-4">
-      <div className="container mx-auto flex items-center justify-between px-4">
-        <Image src="/logo.png" alt="Logo" width={64} height={64} />
-        <nav>
-          <ul className="flex space-x-4">
-            <li><a href="#" className="text-gray-700">Home</a></li>
-            <li><a href="#" className="text-gray-700">Features</a></li>
-            <li><a href="#" className="text-gray-700">About</a></li>
-            <li><a href="#" className="text-gray-700">Contact</a></li>
-          </ul>
-        </nav>
+    <div className="bg-gray-100">
+      <div className="container flex items-center justify-between py-2">
+        <div className="hidden md:flex">
+          <span className="border-r-2 border-black px-2">
+            <i className="far fa-envelope w-5 text-primary"></i>
+            info@adc.com
+          </span>
+          <span className="px-2">
+            <i className="fas fa-phone text-primary"></i> +8801600000000
+          </span>
+        </div>
+        <div className="flex items-center justify-between text-primary ">
+          {currentUser?.email ? (
+            <>
+              <span className="font-bold border-r-2 border-black px-2">
+                Welcome, {currentUser.displayName || currentUser.email}{" "}
+              </span>
+              <span>
+                <button
+                  onClick={logout}
+                  className="px-4 font-bold text-red-500"
+                >
+                  Logout
+                </button>
+              </span>
+            </>
+          ) : (
+            <>
+              <span className="border-r-2 border-black px-2">
+                <Link to="/login">Login</Link>
+              </span>
+              <span className="px-2">
+                <Link to="/register">Register</Link>
+              </span>
+            </>
+          )}
+        </div>
       </div>
-    </header>
+    </div>
   );
 };
 
 export default Header;
-
-
